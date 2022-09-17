@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<property>
+  <name>yarn.app.mapreduce.am.env</name>
+  <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop/etc/hadoop:/home/hadoop/hadoop/share/hadoop/common/lib/*:/home/hadoop/hadoop/share/hadoop/common/*:/home/hadoop/hadoop/share/hadoop/hdfs:/home/hadoop/hadoop/share/hadoop/hdfs/lib/*:/home/hadoop/hadoop/share/hadoop/hdfs/*:/home/hadoop/hadoop/share/hadoop/mapreduce/lib/*:/home/hadoop/hadoop/share/hadoop/mapreduce/*:/home/hadoop/hadoop/share/hadoop/yarn:/home/hadoop/hadoop/share/hadoop/yarn/lib/*:/home/hadoop/hadoop/share/hadoop/yarn/*</value>
+</property>
+<property>
+  <name>mapreduce.map.env</name>
+  <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop/etc/hadoop:/home/hadoop/hadoop/share/hadoop/common/lib/*:/home/hadoop/hadoop/share/hadoop/common/*:/home/hadoop/hadoop/share/hadoop/hdfs:/home/hadoop/hadoop/share/hadoop/hdfs/lib/*:/home/hadoop/hadoop/share/hadoop/hdfs/*:/home/hadoop/hadoop/share/hadoop/mapreduce/lib/*:/home/hadoop/hadoop/share/hadoop/mapreduce/*:/home/hadoop/hadoop/share/hadoop/yarn:/home/hadoop/hadoop/share/hadoop/yarn/lib/*:/home/hadoop/hadoop/share/hadoop/yarn/*</value>
+</property>
+<property>
+  <name>mapreduce.reduce.env</name>
+  <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop/etc/hadoop:/home/hadoop/hadoop/share/hadoop/common/lib/*:/home/hadoop/hadoop/share/hadoop/common/*:/home/hadoop/hadoop/share/hadoop/hdfs:/home/hadoop/hadoop/share/hadoop/hdfs/lib/*:/home/hadoop/hadoop/share/hadoop/hdfs/*:/home/hadoop/hadoop/share/hadoop/mapreduce/lib/*:/home/hadoop/hadoop/share/hadoop/mapreduce/*:/home/hadoop/hadoop/share/hadoop/yarn:/home/hadoop/hadoop/share/hadoop/yarn/lib/*:/home/hadoop/hadoop/share/hadoop/yarn/*</value>
+</property>
+	<property>
+        <name>mapreduce.application.classpath</name>
+        <value>
+            ${HADOOP_HOME}/etc/hadoop,
+            ${HADOOP_HOME}/share/hadoop/common/*,
+            ${HADOOP_HOME}/share/hadoop/common/lib/*,
+            ${HADOOP_HOME}/share/hadoop/hdfs/*,
+            ${HADOOP_HOME}/share/hadoop/hdfs/lib/*,
+            ${HADOOP_HOME}/share/hadoop/mapreduce/*,
+            ${HADOOP_HOME}/share/hadoop/mapreduce/lib/*,
+            ${HADOOP_HOME}/share/hadoop/yarn/*,
+            ${HADOOP_HOME}/share/hadoop/yarn/lib/*
+        </value>
+</property>
+
+	<property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1500</value>
+    <description>每个Map任务的物理内存限制</description>
+</property>
+
+<property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>3000</value>
+    <description>每个Reduce任务的物理内存限制</description>
+</property>
+
+<property>
+    <name>mapreduce.map.java.opts</name>
+    <value>-Xmx1200m</value>
+</property>
+
+<property>
+    <name>mapreduce.reduce.java.opts</name>
+    <value>-Xmx2600m</value>
+</property>
+<property>
+<!--    //表示mapreduce提交至集群yarn运行-->
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+</property>
+
+<!--<property>-->
+<!--&lt;!&ndash;    //表示mapreduce提交至本地运行&ndash;&gt;-->
+<!--    <name>mapreduce.framework.name</name>-->
+<!--    <value>local</value>-->
+<!--</property>-->
+
+
+</configuration>
